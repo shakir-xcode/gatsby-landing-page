@@ -56,10 +56,10 @@ body {
 }
 
 /* Navbar*/
-.navbar-container,
-.navbar-container * {
-  /* background-color: var(--intro-email-bg); */
-}
+/* .navbar-container, */
+/* .navbar-container * { */
+/* background-color: var(--intro-email-bg); */
+/* } */
 .link-container .nav-link-item {
   border-bottom: 1px solid transparent;
   transition: all 0.3s ease-in;
