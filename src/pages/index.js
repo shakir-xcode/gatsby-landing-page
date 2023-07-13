@@ -3,6 +3,7 @@ import Layout from "../components/Layout"
 import Intro from "../components/Intro"
 import styled from "styled-components"
 import Feature from "../components/Feature"
+import Productivity from "../components/Productivity"
 
 const HeaderContainer = styled.header`
 // background-color: var(--intro-email-bg);
@@ -23,6 +24,7 @@ export default function Home() {
       </HeaderContainer>
       <BodyContainer>
         <Feature />
+        <Productivity />
       </BodyContainer>
     </Layout>
   )
