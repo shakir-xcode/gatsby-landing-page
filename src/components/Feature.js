@@ -18,7 +18,7 @@ gap: 3em;
 
 @media ${devices.tablet} {
     flex-direction: row;
-    padding: 5em 0;
+    padding: 3em 0;
     align-items: normal;
 }
 `
