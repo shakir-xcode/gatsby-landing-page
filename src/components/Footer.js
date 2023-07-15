@@ -4,8 +4,11 @@ import styled from "styled-components";
 import location_icon from "../images/icon-location.svg";
 import phone_icon from "../images/icon-phone.svg";
 import mail_icon from "../images/icon-email.svg";
-import profile from "../images/profile-1.jpg";
+import { CiFacebook, } from "react-icons/ci";
+import { RxInstagramLogo } from "react-icons/rx";
+import { LiaTwitter } from "react-icons/lia";
 import { devices } from '../devices';
+import { Link } from 'gatsby';
 
 const FooterContainer = styled.footer`
 padding: 5em 5em;
@@ -40,10 +43,17 @@ background-color: var(--footer-bg);
     margin-top: 0.5em;
 }
 
+.contact-info-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2em;
+    margin-top: -1em;
+}
+
 .contact-info {
     display: flex;
     gap: 0.8em;
-    margin: 1em 0;
+    align-items: center;
 }
 
 .contact-info {
@@ -60,26 +70,30 @@ background-color: var(--footer-bg);
     gap: 0.5em;
 }
 
-.gen-text p{
-    font-size: 1.2rem;
+.gen-text a{
+    font-size: 1rem;
 }
 
 .social-icons-container {
     display: flex;
     gap:0.7em;
+    align-self: center;
 }
 
-.social-icons{
-    width: 28px;
-    object-fit: cover;
-    border-radius: 50%;
-}
-
-@media ${devices.mobileL} {
+@media ${devices.tablet} {
     .footer-content {
         flex-direction: row; 
     }
+
+    .social-icons-container {
+        align-self: start;
+    }
+
+    .contact-info-container {
+        margin-top: 0em;
+    }
 }
+
 `
 
 export default function Footer() {
@@ -95,7 +109,7 @@ export default function Footer() {
                     <p>Lorem ipsum dolor sit amet consectetur adipis odit esse excepturi doloremque ipsam consectetur eligendi mollitia itaque unde exercitationem expedita ex laudantium labore? Aut vel eius  ratione.</p>
                 </div>
 
-                <div>
+                <div className='contact-info-container'>
                     <div className='contact-info'>
                         <img src={phone_icon} alt='phone-icon' className='info-icons' />
                         <p>+1-543-123-4567</p>
@@ -107,22 +121,23 @@ export default function Footer() {
                     </div>
                 </div>
 
-                <div className='about-us gen-text'>
-                    <p>About Us</p>
-                    <p>Jobs</p>
-                    <p>Press</p>
-                    <p>Blog</p>
+                <div className='gen-text'>
+                    <Link to="#">About Us</Link>
+                    <Link to="#">Jobs</Link>
+                    <Link to="#">Press</Link>
+                    <Link to="#">Blog</Link>
                 </div>
                 <div className='gen-text'>
-                    <p>Contact Us</p>
-                    <p>Terms</p>
-                    <p>Privacy</p>
+                    <Link to="#">Contact Us</Link>
+                    <Link to="#">Terms</Link>
+                    <Link to="#">Privacy</Link>
                 </div>
 
+                {/* replace font awesome */}
                 <div className='social-icons-container'>
-                    <img src={profile} alt='facebook-icon' className='social-icons' />
-                    <img src={profile} alt='twitter-icon' className='social-icons' />
-                    <img src={profile} alt='instagram-icon' className='social-icons' />
+                    <Link to="#"><CiFacebook size={28} className='social-icons' /></Link>
+                    <Link to="#"><RxInstagramLogo size={28} className='social-icons' /></Link>
+                    <Link to="#"><LiaTwitter size={28} className='social-icons' /></Link>
                 </div>
             </div>
         </FooterContainer>
