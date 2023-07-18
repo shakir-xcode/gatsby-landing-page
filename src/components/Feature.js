@@ -2,7 +2,7 @@ import React from 'react'
 import { FeatureCard } from './FeatureCard'
 import styled from "styled-components"
 import { devices } from '../devices';
-import { featureData } from '../appData';
+import { featureData } from '../appDataConfig';
 
 const FeatureContainer = styled.section`
 max-width: 864px;
@@ -23,6 +23,7 @@ gap: 3em;
 }
 `
 
+let delay = 50;
 
 const Feature = () => {
 
@@ -31,7 +32,9 @@ const Feature = () => {
             {featureData.map((feature, index) => (<FeatureCard key={index}
                 img={feature.img}
                 title={feature.title}
-                description={feature.description} />)
+                description={feature.description}
+                animation={{ delay: (delay += 250).toString() }}
+            />)
             )}
         </FeatureContainer>
     )

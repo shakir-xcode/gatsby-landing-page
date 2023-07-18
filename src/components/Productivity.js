@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import styled from "styled-components";
 import illustration_productivity from "../images/illustration-stay-productive.png";
 import { Link } from 'gatsby';
 import arrow_icon from "../images/icon-arrow.svg"
 import { devices } from '../devices';
+import Aos from 'aos';
+import { DURATION } from '../appDataConfig';
 
 const ProductivityContainer = styled.section`
 display: flex;
@@ -12,7 +14,6 @@ justify-content: center;
 align-items: center;
 flex-wrap: wrap;
 padding: 5em 1em;
-
 
 .productivity-illustration {
     max-width: 450px;
@@ -72,12 +73,16 @@ padding: 5em 1em;
 `
 
 const Productivity = () => {
+
+    useEffect(() => {
+        Aos.init({ duration: DURATION })
+    }, [])
     return (
         <ProductivityContainer>
             <div className='productivity-illustration'>
                 <img src={illustration_productivity} alt='productivity illustration' />
             </div>
-            <div className='productivity-text-section'>
+            <div className='productivity-text-section' data-aos='slide-up' data-aos-once='true'>
                 <h1>Stay productive,<br />wherever you are</h1>
                 <p>Never let location be an issue when accessing your files. Fylo has you covered for all of your file storage needs.</p>
                 <p>Securely share files and folders with friends, family and colleagues for live collaboration. No email attachments required.</p>

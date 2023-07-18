@@ -5,10 +5,11 @@ import styled from "styled-components"
 import { devices } from '../devices'
 
 
-const NavbarContainer = styled.div`
+const NavbarContainer = styled.nav`
 display: grid;
 gap:1em;
 padding: 2em;
+align-items: center;
 
 grid-template-columns: 1fr 2.5fr;
 

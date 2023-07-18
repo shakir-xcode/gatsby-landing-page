@@ -11,6 +11,7 @@
   --accent-cyan: hsl(176, 68%, 64%);
   --accent-blue: hsl(198, 60%, 50%);
   --accent-red: hsl(0, 100%, 63%);
+  --ss: #181f2b;
 
   /* Neutral */
   --neutral-white: hsl(0, 0%, 100%);
@@ -33,6 +34,7 @@ html {
 body {
   font-family: "Open Sans";
   font-size: 14px;
+  overflow-x: hidden;
   /* background-color: var(--main-bg); */
 }
 
