@@ -38,6 +38,11 @@ box-sizing: border-box;
 `
 
 function Navbar() {
+
+    const toggleTheme = () => {
+
+    }
+
     return (
         <NavbarContainer className='navbar-container'>
             <Logo className='logo'>
@@ -47,6 +52,7 @@ function Navbar() {
                 <Link className='nav-link-item' to="#">Feature</Link>
                 <Link className='nav-link-item' to="#">Team</Link>
                 <Link className='nav-link-item' to="#">Sign In</Link>
+                <button onClick={toggleTheme}>toggle</button>
             </LinkContainer>
         </NavbarContainer>
     )

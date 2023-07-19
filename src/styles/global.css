@@ -2,11 +2,18 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;800&display=swap");
 
 :root {
-  /* Primary */
+  /* Primary Dark*/
   --intro-email-bg: hsl(217, 28%, 15%);
   --main-bg: hsl(218, 28%, 13%);
   --footer-bg: hsl(216, 53%, 9%);
   --testimonials-bg: hsl(219, 30%, 18%);
+
+  /* Primary Light*/
+  --intro-email-bg-light: hsl(217, 72%, 80%);
+  --main-bg-light: hsl(217, 48%, 87%);
+  --footer-bg-light: hsl(210, 12%, 87%);
+  --testimonials-bg-light: hsl(219, 95%, 85%);
+
   /* Accent */
   --accent-cyan: hsl(176, 68%, 64%);
   --accent-blue: hsl(198, 60%, 50%);
@@ -15,9 +22,10 @@
 
   /* Neutral */
   --neutral-white: hsl(0, 0%, 100%);
+  --neutral-black: hsl(0, 0%, 10%);
 }
 html {
-  background-color: var(--intro-email-bg);
+  /* background-color: var(--intro-email-bg-light); */
 }
 
 * {
@@ -27,7 +35,7 @@ html {
   text-decoration: none;
   list-style-type: none;
   /* background-color: var(--main-bg); */
-  color: var(--neutral-white);
+  /* color: var(--neutral-black); */
   /* outline: 1px solid black; */
 }
 
@@ -36,6 +44,8 @@ body {
   font-size: 14px;
   overflow-x: hidden;
   /* background-color: var(--main-bg); */
+  color: var(--neutral-white);
+  background-color: var(--intro-email-bg-light);
 }
 
 /* Layout */
@@ -69,6 +79,6 @@ body {
 
 .link-container .nav-link-item:hover {
   border-bottom-color: white;
-  color: white;
+  /* color: white; */
   /* font-weight: 600; */
 }

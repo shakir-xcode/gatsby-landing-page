@@ -4,7 +4,8 @@ import intro_img from "../images/illustration-intro.png";
 import { devices } from '../devices';
 import bg_desktop_curve from "../images/bg-curvy-desktop.svg";
 import bg_mobile_curve from "../images/bg-curvy-mobile.svg";
-
+import bg_desktop_curve_light from "../images/bg-curvy-desktop-light.svg";
+import bg_mobile_curve_light from "../images/bg-curvy-mobile-light.svg";
 
 const IntroContainer = styled.section`
 position: relative;
@@ -83,7 +84,8 @@ const IntroBgCurve = styled.div`
    bottom: 0;
    width: 100%;
    height: 400px;
-   background-image: url(${bg_mobile_curve});
+   background-image: url(${props => props.dark ? bg_mobile_curve : bg_mobile_curve_light});
+
    background-repeat: no-repeat;
    background-position: 100% 100%;
    background-size: 100% 50%; 
@@ -91,16 +93,17 @@ const IntroBgCurve = styled.div`
    z-index: -20;
 
    @media ${devices.tablet} {
-   background-image: url(${bg_desktop_curve});
+   background-image: url(${props => props.dark ? bg_desktop_curve : bg_desktop_curve_light});
    background-size: 100% 80%; 
 }
 `
 
 
-function Intro() {
+function Intro({ darkTheme }) {
+    console.log('intoro = ', darkTheme)
     return (
         <IntroContainer className='gen-content-container'>
-            <IntroBgCurve className='intro-bg-curve'></IntroBgCurve>
+            <IntroBgCurve className='intro-bg-curve' dark={darkTheme}></IntroBgCurve>
             <IntroContents>
                 <div className='intro-image-container'>
                     <img src={intro_img} alt='intro-img' style={{ width: '100%', backgroundColor: 'transparent' }} />

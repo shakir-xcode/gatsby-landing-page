@@ -4,16 +4,12 @@ import Aos from 'aos';
 import "aos/dist/aos.css";
 import { DURATION } from '../appDataConfig';
 
-// .attrs(props => ({
-//     'data-aos': 'fade-up',
-//     // 'data-aos-delay': props.delay || "50"
-// }))`
-
 const CardContainer = styled.div`
     max-width: 350px;
-    background-color: var(--testimonials-bg);
     border-radius: 4px;
     padding: 2em;
+    background: ${(props) => (props.theme.testimonials_bg)};
+
     
     
     .description-text {
@@ -42,14 +38,14 @@ const CardContainer = styled.div`
     `
 
 const TestimonialCard = ({ description, name, designation, profile, animation }) => {
-
+    const darkTheme = false;
 
     useEffect(() => {
         Aos.init({ duration: DURATION })
     }, [])
     return (
         <div data-aos='fade-up' data-aos-delay={animation.delay || '0'} data-aos-once='true'>
-            <CardContainer>
+            <CardContainer dark={darkTheme}>
                 <p className='description-text'>{description}</p>
                 <div className='person-info'>
                     <img src={profile} alt='profile' />

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import logo from "../images/logo.svg";
 import styled from "styled-components";
 import location_icon from "../images/icon-location.svg";
@@ -12,7 +12,7 @@ import { Link } from 'gatsby';
 
 const FooterContainer = styled.footer`
 padding: 5em 5em;
-background-color: var(--footer-bg);
+background-color: ${props => props.theme.footer_bg};
 
 .footer-content {
     display: flex;
@@ -97,8 +97,10 @@ background-color: var(--footer-bg);
 `
 
 export default function Footer() {
+    const darkTheme = false;
+
     return (
-        <FooterContainer>
+        <FooterContainer dark={darkTheme}>
             <div className='logo-icon'>
                 <img src={logo} alt='logo' />
             </div>
