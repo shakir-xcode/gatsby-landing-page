@@ -2,28 +2,25 @@ import React from 'react';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import "../styles/global.css";
-import styled from 'styled-components';
+import { styled } from "styled-components";
 
-//  max-width: 90%;
-//     margin: 0 auto;
-// @media ${devices.tablet} {
-//     max-width: 100%;
-// }
-// border: 1px solid white;
 
 const ContentContainer = styled.div`
 `
 
+const LayoutContainer = styled.div`
+position: relative;
+`
 
-function Layout({ children }) {
+function Layout({ children, themeToggle, darkTheme }) {
     return (
-        <div className='layout'>
-            <Navbar />
+        <LayoutContainer className='layout'>
+            <Navbar themeToggle={themeToggle} darkTheme={darkTheme} />
             <ContentContainer className='layout-content-container'>
                 {children}
             </ContentContainer>
-            <Footer />
-        </div>
+            <Footer darkTheme={darkTheme} />
+        </LayoutContainer>
     )
 }
 

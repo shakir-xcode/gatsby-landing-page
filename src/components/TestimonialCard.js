@@ -38,14 +38,13 @@ const CardContainer = styled.div`
     `
 
 const TestimonialCard = ({ description, name, designation, profile, animation }) => {
-    const darkTheme = false;
 
     useEffect(() => {
         Aos.init({ duration: DURATION })
     }, [])
     return (
-        <div data-aos='fade-up' data-aos-delay={animation.delay || '0'} data-aos-once='true'>
-            <CardContainer dark={darkTheme}>
+        <div data-aos='fade-up' data-aos-delay={animation.delay || '0'}>
+            <CardContainer>
                 <p className='description-text'>{description}</p>
                 <div className='person-info'>
                     <img src={profile} alt='profile' />

@@ -84,7 +84,7 @@ const IntroBgCurve = styled.div`
    bottom: 0;
    width: 100%;
    height: 400px;
-   background-image: url(${props => props.dark ? bg_mobile_curve : bg_mobile_curve_light});
+   background-image: url(${props => props.dark === 'true' ? bg_mobile_curve : bg_mobile_curve_light});
 
    background-repeat: no-repeat;
    background-position: 100% 100%;
@@ -93,22 +93,21 @@ const IntroBgCurve = styled.div`
    z-index: -20;
 
    @media ${devices.tablet} {
-   background-image: url(${props => props.dark ? bg_desktop_curve : bg_desktop_curve_light});
+   background-image: url(${props => props.dark === 'true' ? bg_desktop_curve : bg_desktop_curve_light});
    background-size: 100% 80%; 
 }
 `
 
 
 function Intro({ darkTheme }) {
-    console.log('intoro = ', darkTheme)
     return (
         <IntroContainer className='gen-content-container'>
-            <IntroBgCurve className='intro-bg-curve' dark={darkTheme}></IntroBgCurve>
+            <IntroBgCurve className='intro-bg-curve' dark={darkTheme.toString()}></IntroBgCurve>
             <IntroContents>
                 <div className='intro-image-container'>
                     <img src={intro_img} alt='intro-img' style={{ width: '100%', backgroundColor: 'transparent' }} />
                 </div>
-                <div data-aos='fade-up' data-aos-delay='0' data-aos-once='true'>
+                <div data-aos='zoom-in' data-aos-delay='0'>
                     <IntroHeading>All your files in one secure location, accessible anywhere</IntroHeading>
                     <IntroPara >Fylo stores all your most important files in one secure location. Access them wherever you need, share and collaborate with friends family, and co-workers.
                     </IntroPara>

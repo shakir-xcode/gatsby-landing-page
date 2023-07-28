@@ -82,7 +82,7 @@ const Productivity = () => {
             <div className='productivity-illustration'>
                 <img src={illustration_productivity} alt='productivity illustration' />
             </div>
-            <div className='productivity-text-section' data-aos='slide-up' data-aos-once='true'>
+            <div className='productivity-text-section' data-aos='zoom-in' >
                 <h1>Stay productive,<br />wherever you are</h1>
                 <p>Never let location be an issue when accessing your files. Fylo has you covered for all of your file storage needs.</p>
                 <p>Securely share files and folders with friends, family and colleagues for live collaboration. No email attachments required.</p>

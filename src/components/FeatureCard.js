@@ -40,7 +40,7 @@ export const FeatureCard = ({ img, title, description, animation }) => {
     }, [])
 
     return (
-        <div data-aos='zoom-in' data-aos-delay={animation.delay || '0'} data-aos-once='true'>
+        <div data-aos='zoom-in' data-aos-delay={animation.delay || '0'}>
             <FeatureCardContainer>
                 <div className='feature-img-container'>
                     <img src={img} alt='feature-img' />

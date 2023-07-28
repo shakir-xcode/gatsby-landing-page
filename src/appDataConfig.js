@@ -58,6 +58,6 @@ export const testimonilaData = [
 
 // ANIMATION CONFIG
 
-export const DURATION = 1000;
+export const DURATION = 500;
 export const DELAY = 800;
 

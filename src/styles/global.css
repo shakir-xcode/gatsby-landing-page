@@ -8,24 +8,20 @@
   --footer-bg: hsl(216, 53%, 9%);
   --testimonials-bg: hsl(219, 30%, 18%);
 
-  /* Primary Light*/
-  --intro-email-bg-light: hsl(217, 72%, 80%);
-  --main-bg-light: hsl(217, 48%, 87%);
-  --footer-bg-light: hsl(210, 12%, 87%);
+  /* Primary Light */
+  --intro-email-bg-light: #fff;
+  --main-bg-light: #e5e5e5;
+  --footer-bg-light: hsl(210, 93%, 83%);
   --testimonials-bg-light: hsl(219, 95%, 85%);
 
   /* Accent */
   --accent-cyan: hsl(176, 68%, 64%);
   --accent-blue: hsl(198, 60%, 50%);
   --accent-red: hsl(0, 100%, 63%);
-  --ss: #181f2b;
 
   /* Neutral */
   --neutral-white: hsl(0, 0%, 100%);
   --neutral-black: hsl(0, 0%, 10%);
-}
-html {
-  /* background-color: var(--intro-email-bg-light); */
 }
 
 * {
@@ -34,28 +30,27 @@ html {
   box-sizing: border-box;
   text-decoration: none;
   list-style-type: none;
-  /* background-color: var(--main-bg); */
-  /* color: var(--neutral-black); */
-  /* outline: 1px solid black; */
 }
 
 body {
   font-family: "Open Sans";
   font-size: 14px;
   overflow-x: hidden;
-  /* background-color: var(--main-bg); */
   color: var(--neutral-white);
-  background-color: var(--intro-email-bg-light);
+  background-color: var(--intro-email-bg);
+  transition: background 0.4s linear, color 0.4s linear;
+}
+
+a {
+  color: inherit;
 }
 
 /* Layout */
 .layout {
   max-width: 1440px;
   margin: 0 auto;
-  /* background-color: var(--intro-email-bg); */
 }
 
-/* content container */
 .gen-content-container {
   max-width: 100%;
   margin: 0 auto;
@@ -65,20 +60,4 @@ body {
   .gen-content-container {
     max-width: 100%;
   }
-}
-
-/* Navbar*/
-/* .navbar-container, */
-/* .navbar-container * { */
-/* background-color: var(--intro-email-bg); */
-/* } */
-.link-container .nav-link-item {
-  border-bottom: 1px solid transparent;
-  transition: all 0.3s ease-in;
-}
-
-.link-container .nav-link-item:hover {
-  border-bottom-color: white;
-  /* color: white; */
-  /* font-weight: 600; */
 }

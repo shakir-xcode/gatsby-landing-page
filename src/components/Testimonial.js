@@ -25,23 +25,25 @@ background-position: 0.3% 7.1%;
 }
 `
 
-let delay = 50;
+let delay = 200;
 const Testimonial = () => {
 
     return (
+        <div>
+            <TestimonialContainer>
+                {
+                    testimonilaData.map((info, index) => (<TestimonialCard
+                        key={index}
+                        name={info.name}
+                        description={info.description}
+                        profile={info.profile}
+                        designation={info.designation}
+                        animation={{ delay: (delay += 150).toString() }}
+                    />))
+                }
+            </TestimonialContainer>
+        </div>
 
-        <TestimonialContainer>
-            {
-                testimonilaData.map((info, index) => (<TestimonialCard
-                    key={index}
-                    name={info.name}
-                    description={info.description}
-                    profile={info.profile}
-                    designation={info.designation}
-                    animation={{ delay: (delay += 150).toString() }}
-                />))
-            }
-        </TestimonialContainer>
     )
 }
 
