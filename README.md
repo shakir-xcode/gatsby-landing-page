@@ -27,3 +27,10 @@ I created this landing page as a challenge at frontendmentor.io. The page is res
 </ul>
 
 ## Preview
+** Dark Theme
+![landing-page-dark](https://github.com/shakir-xcode/gatsby-landing-page/assets/125987776/e401d56a-50b5-430e-8196-1851189bc2b3)
+
+** Light Theme
+![landing-page-light](https://github.com/shakir-xcode/gatsby-landing-page/assets/125987776/88144c0f-0385-49cd-8854-db7ab766606c)
+
+
