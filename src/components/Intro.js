@@ -4,31 +4,18 @@ import intro_img from "../images/illustration-intro.png";
 import { devices } from '../devices';
 import bg_desktop_curve from "../images/bg-curvy-desktop.svg";
 import bg_mobile_curve from "../images/bg-curvy-mobile.svg";
+import bg_desktop_curve_light from "../images/bg-curvy-desktop-light.svg";
+import bg_mobile_curve_light from "../images/bg-curvy-mobile-light.svg";
 
-
-
-
-// border: 1px solid white;
 const IntroContainer = styled.section`
 position: relative;
-// background-image: url(${bg_desktop_curve});
-// background-repeat: no-repeat;
-// background-position: bottom;
-// background-size: 100% 20%;
-border: 1px solid var(--main-bg);
-
+padding: 1px 0;
 `
 
 const IntroContents = styled.div`
    max-width: 652px;
    margin: 0 auto;
    text-align: center;
-   
-//    background-color: transparent;
-   
-//    & * {
-//     background-color: transparent;
-//    }
 
    .intro-image-container {
     margin: 0 auto;
@@ -97,35 +84,35 @@ const IntroBgCurve = styled.div`
    bottom: 0;
    width: 100%;
    height: 400px;
-   background-image: url(${bg_mobile_curve});
+   background-image: url(${props => props.dark === 'true' ? bg_mobile_curve : bg_mobile_curve_light});
+
    background-repeat: no-repeat;
    background-position: 100% 100%;
    background-size: 100% 50%; 
    object-fit: cover;
-//    background-color: blue;
    z-index: -20;
 
    @media ${devices.tablet} {
-   background-image: url(${bg_desktop_curve});
+   background-image: url(${props => props.dark === 'true' ? bg_desktop_curve : bg_desktop_curve_light});
    background-size: 100% 80%; 
-//    background-color: red;
-
 }
 `
 
 
-function Intro() {
+function Intro({ darkTheme }) {
     return (
         <IntroContainer className='gen-content-container'>
-            <IntroBgCurve className='intro-bg-curve'></IntroBgCurve>
+            <IntroBgCurve className='intro-bg-curve' dark={darkTheme.toString()}></IntroBgCurve>
             <IntroContents>
                 <div className='intro-image-container'>
                     <img src={intro_img} alt='intro-img' style={{ width: '100%', backgroundColor: 'transparent' }} />
                 </div>
-                <IntroHeading>All your files in one secure location, accessible anywhere</IntroHeading>
-                <IntroPara >Fylo stores all your most important files in one secure location. Access them wherever you need, share and collaborate with friends family, and co-workers.
-                </IntroPara>
-                <CtaButton>Get Started</CtaButton>
+                <div data-aos='zoom-in' data-aos-delay='0'>
+                    <IntroHeading>All your files in one secure location, accessible anywhere</IntroHeading>
+                    <IntroPara >Fylo stores all your most important files in one secure location. Access them wherever you need, share and collaborate with friends family, and co-workers.
+                    </IntroPara>
+                    <CtaButton>Get Started</CtaButton>
+                </div>
             </IntroContents>
         </IntroContainer>
     )

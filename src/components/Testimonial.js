@@ -1,13 +1,13 @@
 import React from 'react'
 import styled from "styled-components";
-import { testimonilaData } from '../appData';
+import { testimonilaData } from '../appDataConfig';
 import TestimonialCard from './TestimonialCard';
 import { devices } from "../devices";
 import bg_quotes from "../images/bg-quotes.png";
 
 
 const TestimonialContainer = styled.section`
-width: fit-content;
+max-width: 850px;
 display: flex;
 flex-direction: column;
 align-items: center;
@@ -25,19 +25,25 @@ background-position: 0.3% 7.1%;
 }
 `
 
+let delay = 0;
 const Testimonial = () => {
-    return (
 
-        <TestimonialContainer>
-            {
-                testimonilaData.map(info => (<TestimonialCard
-                    name={info.name}
-                    description={info.description}
-                    profile={info.profile}
-                    designation={info.designation}
-                />))
-            }
-        </TestimonialContainer>
+    return (
+        <div>
+            <TestimonialContainer>
+                {
+                    testimonilaData.map((info, index) => (<TestimonialCard
+                        key={index}
+                        name={info.name}
+                        description={info.description}
+                        profile={info.profile}
+                        designation={info.designation}
+                        animation={{ delay: (delay += 150).toString() }}
+                    />))
+                }
+            </TestimonialContainer>
+        </div>
+
     )
 }
 
