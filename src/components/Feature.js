@@ -23,7 +23,7 @@ gap: 3em;
 }
 `
 
-let delay = 50;
+let delay = 0;
 
 const Feature = () => {
 
@@ -33,7 +33,7 @@ const Feature = () => {
                 img={feature.img}
                 title={feature.title}
                 description={feature.description}
-                animation={{ delay: (delay += 250).toString() }}
+                animation={{ delay: (delay += 100).toString() }}
             />)
             )}
         </FeatureContainer>

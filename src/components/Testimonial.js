@@ -25,7 +25,7 @@ background-position: 0.3% 7.1%;
 }
 `
 
-let delay = 200;
+let delay = 0;
 const Testimonial = () => {
 
     return (
