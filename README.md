@@ -28,9 +28,11 @@ I created this landing page as a challenge at frontendmentor.io. The page is res
 
 ## Preview
 <b>Dark Theme</b>
+
 ![landing-page-dark](https://github.com/shakir-xcode/gatsby-landing-page/assets/125987776/e401d56a-50b5-430e-8196-1851189bc2b3)
 
 <b>Light Theme</b>
+
 ![landing-page-light](https://github.com/shakir-xcode/gatsby-landing-page/assets/125987776/88144c0f-0385-49cd-8854-db7ab766606c)
 
 
